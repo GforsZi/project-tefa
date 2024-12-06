@@ -19,3 +19,6 @@ Route::get("/register", [Register::class, "show"]);
 Route::get("/profile", [Profile::class, "show"]);
 Route::get("/setting", [Setting::class, "show"]);
 Route::get("/uploads", [Uploads::class, "show"]);
+Route::get("/uploads/insert", [Uploads::class, "show_ins"]);
+Route::get("/uploads/edit", [Uploads::class, "show_edt"]);
+Route::get("/uploads/category", [Uploads::class, "show_ctgy"]);
