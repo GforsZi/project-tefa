@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('fotos', function (Blueprint $table) {
             $table->id();
+                  $table
+        ->foreignId("user_id")
+        ->constrained(table: "users", indexName: "BY_user_id");
             $table->timestamps();
         });
     }
