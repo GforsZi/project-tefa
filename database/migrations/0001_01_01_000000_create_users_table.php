@@ -15,9 +15,8 @@ return new class extends Migration {
       $table->string("name");
       $table->string("nik_name");
       $table->string("password");
-      $table
-        ->enum("role", ["student", "admin", "teacher"])
-        ->default("student");
+      $table->enum("role", ["student", "admin", "teacher"])->default("student");
+      $table->enum("major", ["Pengembangan Perangkat Lunak dan Gim", "Desain Komunikasi Visual"]);
       $table
         ->string("foto_profile")
         ->nullable()

@@ -9,10 +9,11 @@ use App\Models\User;
 
 class fotos extends Model
 {
-    /** @use HasFactory<\Database\Factories\FotosFactory> */
-    use HasFactory;
-      protected $guarded = ["id", "timestamps"];
+  /** @use HasFactory<\Database\Factories\FotosFactory> */
+  use HasFactory;
   
+  protected $guarded = ["id", "timestamps"];
+
   protected $with = ["user"];
 
   public function user(): BelongsTo

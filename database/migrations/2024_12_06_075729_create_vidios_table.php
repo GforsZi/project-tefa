@@ -4,27 +4,31 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('vidios', function (Blueprint $table) {
-            $table->id();
-                  $table
+return new class extends Migration {
+  /**
+   * Run the migrations.
+   */
+  public function up(): void
+  {
+    Schema::create("vidios", function (Blueprint $table) {
+      $table->id();
+      $table
         ->foreignId("user_id")
         ->constrained(table: "users", indexName: "BY_user_id");
-            $table->timestamps();
-        });
-    }
+      $table->string("name_video");
+      $table->string("url_video");
+      $table->string("caption");
+      $table->string("description");
+      $table->integer("likes");
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('vidios');
-    }
+  /**
+   * Reverse the migrations.
+   */
+  public function down(): void
+  {
+    Schema::dropIfExists("vidios");
+  }
 };
